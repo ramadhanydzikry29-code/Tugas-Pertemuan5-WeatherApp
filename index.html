@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuaca — Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">CUACAKU</h1>
+      <p class="app__subtitle">Cari kota, lihat kondisi udaranya sekarang.</p>
+    </header>
+
+    <form id="searchForm" class="search" autocomplete="off">
+      <input
+        id="cityInput"
+        class="search__input"
+        type="text"
+        placeholder="Ketik nama kota, misalnya Medan"
+        aria-label="Nama kota"
+      />
+      <button type="submit" class="search__button">Cari</button>
+    </form>
+
+    <div class="unit-toggle" role="group" aria-label="Satuan suhu">
+      <button type="button" id="unitC" class="unit-toggle__btn is-active" data-unit="metric">°C</button>
+      <button type="button" id="unitF" class="unit-toggle__btn" data-unit="imperial">°F</button>
+    </div>
+
+    <section id="historyRow" class="history" aria-label="Riwayat pencarian"></section>
+
+    <section id="resultArea" class="result" aria-live="polite">
+      <p class="result__placeholder">Belum ada kota yang dicari. Coba ketik satu di atas ⬆️</p>
+    </section>
+
+    <section id="forecastArea" class="forecast"></section>
+
+    <footer class="app__footer">
+      <p>Data cuaca oleh <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
